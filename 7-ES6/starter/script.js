@@ -119,36 +119,77 @@ Lecture: Arrow functions*/
 
 // ES5
 
-var box5 = {
-    color: 'green',
-    position: 1,
-    clickMe: function(){
+// var box5 = {
+//     color: 'green',
+//     position: 1,
+//     clickMe: function(){
 
-        var self = this;
-        document.querySelector('.green').addEventListener('click',
-            function(){
-                var str = 'This is a box ' + self.position + ' and it is ' + self.color;
-                alert(str);
-            })
-    }
-};
+//         var self = this;
+//         document.querySelector('.green').addEventListener('click',
+//             function(){
+//                 var str = 'This is a box ' + self.position + ' and it is ' + self.color;
+//                 alert(str);
+//             })
+//     }
+// };
 
-//box5.clickMe();
+// //box5.clickMe();
 
-// ES6
+// // ES6
 
-const box6 = {
-    color: 'green',
-    position: 1,
-    clickMe: function(){
+// const box6 = {
+//     color: 'green',
+//     position: 1,
+//     clickMe: function(){
 
-        var self = this;
-        document.querySelector('.green').addEventListener('click',
-            () => {
-                var str = 'This is a box ' + self.position + ' and it is ' + self.color;
-                alert(str);
-            })
-    }
-};
+//         var self = this;
+//         document.querySelector('.green').addEventListener('click',
+//             () => {
+//                 var str = 'This is a box ' + self.position + ' and it is ' + self.color;
+//                 alert(str);
+//             })
+//     }
+// };
 
-box6.clickMe();
+// box6.clickMe();
+
+/*************
+ * Destructuring
+ */
+
+
+ // ES5
+ var john = ['John', 26];
+
+ var name = john[0];
+ var age = john[1];
+
+ // ES6
+
+ const [name6, ages6] = ['John', 26];
+ console.log(name6);
+ console.log(ages6); 
+
+
+ const obj = {
+     firstName : 'John',
+     lastName : 'Smith'
+ };
+
+ const {firstName, lastName} = obj;
+ console.log(firstName);
+ console.log(lastName);
+
+ const {firstName: a, lastName: b} = obj;
+ console.log(a);
+ console.log(b);
+
+ function calcAgeRetirement(year){
+     const age = new Date().getFullYear() - year;
+     return [age, 60 - age];
+ }
+
+ const [age2, retirement] =  calcAgeRetirement(1990);
+
+ console.log(age2);
+ console.log(retirement);
